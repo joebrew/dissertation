@@ -1,19 +1,44 @@
-# dissertation
+  # dissertation
 Dissertation
 
-pdftk 0intro.pdf cat 1-24 output 0introshort.pdf
-pdftk 0intro.pdf cat 30-end output 9conclusion.pdf
+pdftk 0intro.pdf cat 1-33 output 0introshort.pdf
+pdftk 0intro.pdf cat 40-end output 9conclusion.pdf
 
-pdftk 0intro.pdf cat 25 output x1.pdf
-pdftk 0intro.pdf cat 26 output x2.pdf
-pdftk 0intro.pdf cat 27 output x3.pdf
-pdftk 0intro.pdf cat 28 output x4.pdf
-pdftk 0intro.pdf cat 29 output x5.pdf
-pdftk 0intro.pdf cat 30 output x6.pdf
+pdftk 0intro.pdf cat 34 output x1.pdf
+pdftk 0intro.pdf cat 35 output x2.pdf
+pdftk 0intro.pdf cat 36 output x3.pdf
+pdftk 0intro.pdf cat 37 output x4.pdf
+pdftk 0intro.pdf cat 38 output x5.pdf
+pdftk 0intro.pdf cat 39 output x6.pdf
 
 
 
 pdftk 0introshort.pdf x1.pdf 1surveyexperts.pdf x2.pdf 2fdi.pdf x3.pdf 3gambia.pdf x4.pdf 4vaccine.pdf x5.pdf 5cowsquito.pdf x6.pdf 6.pdf 9conclusion.pdf cat output combined.pdf
+
+
+
+pdfjam --outfile newfile.pdf --pagecommand '{Page}' combined.pdf
+
+
+
+total=171
+gs -o pagenumbers.pdf    \
+   -sDEVICE=pdfwrite        \
+   -g5950x8420              \
+   -c "/Helvetica findfont  \
+       6 scalefont setfont \
+       1 1  ${total} {      \
+       /PageNo exch def     \
+       540 10 moveto        \
+       (Page ) show         \
+       PageNo 3 string cvs  \
+       show                 \
+       ( of ${total}) show  \
+       showpage             \
+       } for"
+pdftk combined.pdf              \
+  multistamp pagenumbers.pdf \
+  output pages-numbered.pdf
 
 
 0intro.pdf           4vaccine.pdf            8gdp.pdf

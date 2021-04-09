@@ -1,0 +1,18 @@
+\documentclass{article}
+\RequirePackage[a4paper,top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\begin{document}
+
+\fancyfoot[RO]{Braga}
+\fancyfoot[LO]{2015}
+\fancyfoot[CO]{===}
+
+\fancyhead[LO]{Lecture notes of askubuntu}
+\fancyhead[RO]{\thepage}
+
+  \includepdf[pagecommand={\thispagestyle{empty}},pages=1 ]{x.pdf}
+  \includepdf[pagecommand={\thispagestyle{fancy}},pages=2-]{x.pdf}
+
+\end{document}

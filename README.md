@@ -17,7 +17,7 @@ pdftk 0introshort.pdf x1.pdf 1surveyexperts.pdf x2.pdf 2fdi.pdf x3.pdf 3gambia.p
 
 
 
-pdfjam --outfile newfile.pdf --pagecommand '{Page}' combined.pdf
+# pdfjam --outfile newfile.pdf --pagecommand '{Page}' combined.pdf
 
 
 

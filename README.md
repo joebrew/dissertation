@@ -45,3 +45,9 @@ pdftk combined.pdf              \
  1surveyexperts.pdf   5cowsquito.pdf          9externalities.pdf
  2fdi.pdf             6.pdf                  'Academic summary.pdf'
  3gambia.pdf          7syntheticcontrol.pdf   joe_brew_dissertation_v0.pdf
+ 
+ ### VU SPECIFIC STUFF
+ pdftk pages-numbered.pdf cat 6-end output temp2.pdf
+ pdftk 0intro.pdf cat 1-1 output pretty_title.pdf
+ pdftk 0intro.pdf cat 4-4 output acknowledge.pdf
+ pdftk 000_vu_title_page.pdf pretty_title.pdf acknowledge.pdf temp2.pdf cat output vu_final.pdf
